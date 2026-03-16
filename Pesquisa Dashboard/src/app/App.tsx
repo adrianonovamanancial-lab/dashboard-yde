@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Dashboard from './Dashboard';
 import { Lock } from 'lucide-react';
 
-export default function App() {
+export default function App(){
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState('');
   const [error, setError] = useState(false);
