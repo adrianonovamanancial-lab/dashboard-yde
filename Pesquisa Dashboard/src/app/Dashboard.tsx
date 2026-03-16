@@ -42,7 +42,6 @@ export default function Dashboard() {
         const { data, error } = await supabase
           .from('pesquisa_yde_respostas')
           .select('*')
-          .order('created_at', { ascending: false });
 
         console.log('DATA DASHBOARD:', data);
 
