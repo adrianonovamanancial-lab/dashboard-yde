@@ -44,11 +44,14 @@ export default function Dashboard() {
           .select('*')
           .order('created_at', { ascending: false });
 
-        if (error) {
-          console.error('Erro ao buscar entrevistas:', error);
-          setSurveys([]);
-          return;
-        }
+        console.log('DATA DASHBOARD:', data);
+
+if (error) {
+  console.error('Erro ao buscar entrevistas:', error);
+  alert('Erro ao buscar entrevistas: ' + error.message);
+  setSurveys([]);
+  return;
+}
 
         setSurveys(data || []);
         setChartKey(Date.now());
