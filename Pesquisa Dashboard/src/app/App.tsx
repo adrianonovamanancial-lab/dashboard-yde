@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import Dashboard from './Dashboard';
-import heroLogoImage from 'figma:asset/72d9b08afad15dd6d1ecf014c3b58f2eeb402ba9.png';
 import { Lock } from 'lucide-react';
 
 export default function App() {
@@ -22,7 +21,6 @@ export default function App() {
   if (!isAuthenticated) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center px-4 bg-white">
-        <img src={heroLogoImage} alt="Yde Symbol" className="h-20 w-auto mb-8" />
         
         <h1 
           className="text-4xl sm:text-5xl mb-3 text-center"
