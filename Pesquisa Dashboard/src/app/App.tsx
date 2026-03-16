@@ -2,13 +2,14 @@ import { useState } from 'react';
 import Dashboard from './Dashboard';
 import { Lock } from 'lucide-react';
 
-export default function App(){
+export default function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState('');
   const [error, setError] = useState(false);
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
+
     if (password === 'Pa$$word@123') {
       setIsAuthenticated(true);
       setError(false);
@@ -21,24 +22,23 @@ export default function App(){
   if (!isAuthenticated) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center px-4 bg-white">
-        
-        <h1 
+        <h1
           className="text-4xl sm:text-5xl mb-3 text-center"
-          style={{ 
-            fontFamily: 'Playfair Display, serif', 
+          style={{
+            fontFamily: 'Playfair Display, serif',
             fontWeight: 700,
-            color: '#162C46'
+            color: '#162C46',
           }}
         >
           Controle da Pesquisa YDE
         </h1>
-        
-        <p 
+
+        <p
           className="text-lg mb-12 text-center"
-          style={{ 
+          style={{
             fontFamily: 'Montserrat, sans-serif',
             color: '#162C46',
-            opacity: 0.7
+            opacity: 0.7,
           }}
         >
           Área restrita - Acesso por senha
@@ -48,7 +48,7 @@ export default function App(){
           <div className="bg-white p-8 rounded-lg border-2" style={{ borderColor: '#162C46' }}>
             <div className="flex items-center gap-3 mb-6">
               <Lock size={24} style={{ color: '#B8963A' }} />
-              <label 
+              <label
                 htmlFor="password"
                 className="text-lg font-semibold"
                 style={{ fontFamily: 'Montserrat, sans-serif', color: '#162C46' }}
@@ -56,7 +56,7 @@ export default function App(){
                 Digite a senha de acesso
               </label>
             </div>
-            
+
             <input
               id="password"
               type="password"
@@ -67,21 +67,21 @@ export default function App(){
               }}
               placeholder="Senha"
               className="w-full px-4 py-3 rounded-lg border-2 mb-4 transition-colors"
-              style={{ 
+              style={{
                 fontFamily: 'Montserrat, sans-serif',
                 borderColor: error ? '#ef4444' : '#162C46',
                 color: '#162C46',
-                fontSize: '16px'
+                fontSize: '16px',
               }}
               autoFocus
             />
 
             {error && (
-              <p 
+              <p
                 className="text-sm mb-4"
-                style={{ 
+                style={{
                   fontFamily: 'Montserrat, sans-serif',
-                  color: '#ef4444'
+                  color: '#ef4444',
                 }}
               >
                 Senha incorreta. Tente novamente.
@@ -91,12 +91,12 @@ export default function App(){
             <button
               type="submit"
               className="w-full py-3 rounded-lg transition-opacity hover:opacity-80"
-              style={{ 
+              style={{
                 fontFamily: 'Montserrat, sans-serif',
                 fontWeight: 600,
                 fontSize: '16px',
                 backgroundColor: '#B8963A',
-                color: '#FFFFFF'
+                color: '#FFFFFF',
               }}
             >
               Acessar Dashboard
@@ -106,6 +106,9 @@ export default function App(){
       </div>
     );
   }
+
+  return <Dashboard />;
+}
 
   return <Dashboard />;
 }
