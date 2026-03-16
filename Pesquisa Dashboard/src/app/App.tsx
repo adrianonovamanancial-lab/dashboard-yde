@@ -45,13 +45,19 @@ export default function App() {
         </p>
 
         <form onSubmit={handleLogin} className="w-full max-w-md">
-          <div className="bg-white p-8 rounded-lg border-2" style={{ borderColor: '#162C46' }}>
+          <div
+            className="bg-white p-8 rounded-lg border-2"
+            style={{ borderColor: '#162C46' }}
+          >
             <div className="flex items-center gap-3 mb-6">
               <Lock size={24} style={{ color: '#B8963A' }} />
               <label
                 htmlFor="password"
                 className="text-lg font-semibold"
-                style={{ fontFamily: 'Montserrat, sans-serif', color: '#162C46' }}
+                style={{
+                  fontFamily: 'Montserrat, sans-serif',
+                  color: '#162C46',
+                }}
               >
                 Digite a senha de acesso
               </label>
@@ -106,9 +112,6 @@ export default function App() {
       </div>
     );
   }
-
-  return <Dashboard />;
-}
 
   return <Dashboard />;
 }
